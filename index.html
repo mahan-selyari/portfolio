@@ -1,54 +1,744 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mahan Selyari — Frontend Developer Portfolio">
-  <title>Mahan Selyari — Frontend Developer</title>
-  <style>
-    :root{--bg:#0b0b0d;--card:#141419;--border:#25252d;--text:#f5f5f7;--muted:#a4a4ad;--accent:#fff}
-    *{box-sizing:border-box;margin:0;padding:0} body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6} a{color:inherit;text-decoration:none}
-    .wrap{width:min(1100px,92%);margin:auto}.hero{min-height:72vh;display:grid;place-items:center;padding:80px 0}.eyebrow{color:var(--muted);font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}.hero h1{font-size:clamp(3rem,8vw,6.5rem);line-height:.95;letter-spacing:-.06em;max-width:900px}.hero p{max-width:650px;color:var(--muted);font-size:1.1rem;margin-top:28px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{padding:12px 18px;border:1px solid var(--border);border-radius:10px;background:var(--text);color:#111;font-weight:700}.btn.secondary{background:transparent;color:var(--text)}
-    section{padding:70px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:28px}.section-head h2{font-size:2rem;letter-spacing:-.03em}.section-head p{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.project:hover{transform:translateY(-4px);border-color:#44444e}.num{color:var(--muted);font-size:.85rem}.project h3{font-size:1.65rem;margin:10px 0}.project p{color:var(--muted);max-width:470px}.stack{margin-top:18px;color:#ddd;font-size:.9rem}.open{margin-top:24px;font-weight:700}.note{margin-top:28px;color:var(--muted);font-size:.9rem}.footer{border-top:1px solid var(--border);padding:30px 0 45px;color:var(--muted);font-size:.9rem}
-    @media(max-width:700px){.grid{grid-template-columns:1fr}.hero{min-height:65vh;padding:60px 0}.section-head{display:block}.section-head p{margin-top:8px}.project{min-height:210px}}
-  </style>
-</head>
-<body>
-  <header class="hero">
-    <div class="wrap">
-      <div class="eyebrow">Frontend Developer · HTML · CSS · JavaScript · Tailwind</div>
-      <h1>Building clean, responsive web experiences.</h1>
-      <p>I'm Mahan Selyari, a frontend developer focused on polished interfaces, responsive layouts and practical JavaScript interactions.</p>
-      <div class="actions">
-        <a class="btn" href="#projects">View projects</a>
-        <a class="btn secondary" href="https://github.com/mahan-selyari" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section id="projects">
-      <div class="section-head">
-        <div><h2>Selected work</h2><p>Four frontend projects — replace these links if your ZIP uses different project names.</p></div>
-      </div>
-      <div class="grid">
-        <a class="project" href="./roast-log/">
-          <div><span class="num">01</span><h3>Roast Log</h3><p>Coffee roasting dashboard with a dark, data-focused interface.</p></div><div><div class="stack">HTML · CSS · JavaScript</div><div class="open">Open project →</div></div>
-        </a>
-        <a class="project" href="./luxora/">
-          <div><span class="num">02</span><h3>LUXORA</h3><p>Luxury e-commerce experience with search, filters, cart and product interactions.</p></div><div><div class="stack">HTML · CSS · JavaScript</div><div class="open">Open project →</div></div>
-        </a>
-        <a class="project" href="./arona/">
-          <div><span class="num">03</span><h3>ARONA</h3><p>RTL clinic and beauty center website with booking-focused interactions.</p></div><div><div class="stack">HTML · CSS · JavaScript</div><div class="open">Open project →</div></div>
-        </a>
-        <a class="project" href="./vayo/">
-          <div><span class="num">04</span><h3>VAYO</h3><p>Travel and stay booking interface with property search and reservation flow.</p></div><div><div class="stack">Tailwind CSS · JavaScript</div><div class="open">Open project →</div></div>
-        </a>
-      </div>
-      <p class="note">Project folders are ready to be populated with the files from your ZIP.</p>
+  <title>Roast Log — داشبورد برشته‌کاری قهوه</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="brand">
+      <span class="brand-mark">◐</span>
+      <span class="brand-name">Roast Log</span>
+    </div>
+
+    <nav class="nav">
+
+      <a class="nav-item active" href="#" data-page="dashboard">
+        <span>▦</span>
+        گزارش امروز
+      </a>
+
+      <a class="nav-item" href="#" data-page="batches">
+        <span>▤</span>
+        دسته‌ها
+      </a>
+
+      <a class="nav-item" href="#" data-page="blends">
+        <span>◒</span>
+        ترکیب قهوه‌ها
+      </a>
+
+      <a class="nav-item" href="#" data-page="machine">
+        <span>◉</span>
+        وضعیت دستگاه
+      </a>
+
+    </nav>
+
+    <div class="sidebar-foot">
+      <span class="dot"></span>
+      دستگاه ۲ — روشن
+    </div>
+
+  </aside>
+
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section class="page active-page" id="dashboard">
+
+      <header class="topbar">
+
+        <div>
+          <h1>گزارش امروز</h1>
+          <p class="subtitle">
+            سه‌شنبه، ۱۸ شهریور — نوبت صبح
+          </p>
+        </div>
+
+        <div class="topbar-stat">
+          <span class="topbar-stat-num" id="liveTemp">
+            198
+          </span>
+
+          <span class="topbar-stat-unit">
+            °C دمای دستگاه
+          </span>
+        </div>
+
+      </header>
+
+
+      <section class="hero-row">
+
+        <div class="hero-card">
+
+          <span class="hero-label">
+            مقدار برشته‌شده امروز
+          </span>
+
+          <div class="hero-num">
+            <span id="totalKg">28.6</span>
+            <span>kg</span>
+          </div>
+
+          <div class="hero-bar">
+            <div
+              class="hero-bar-fill"
+              style="width:68%">
+            </div>
+          </div>
+
+          <span class="hero-target">
+            هدف روزانه: ۴۲ کیلوگرم
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <span class="mini-label">
+            دسته در حال پردازش
+          </span>
+
+          <span class="mini-num mono">
+            BR-024
+          </span>
+
+          <span class="mini-sub">
+            در حال برشته‌کاری
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <span class="mini-label">
+            میانگین زمان اولین ترک
+          </span>
+
+          <span class="mini-num mono">
+            9:14
+          </span>
+
+          <span class="mini-sub">
+            دقیقه:ثانیه
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <section class="grid-row">
+
+        <div class="panel chart-panel">
+
+          <div class="panel-head">
+
+            <h2>
+              تغییرات دمای دستگاه
+            </h2>
+
+            <button class="panel-btn" id="roastToggle">
+              شروع برشته‌کاری
+            </button>
+
+          </div>
+
+          <canvas
+            id="tempChart"
+            width="640"
+            height="220">
+          </canvas>
+
+          <div class="chart-legend">
+
+            <span>
+              <i class="sw drum"></i>
+              دمای دستگاه
+            </span>
+
+            <span>
+              <i class="sw exhaust"></i>
+              دمای هوای خروجی
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="panel origin-panel">
+
+          <div class="panel-head">
+            <h2>
+              محل کشت دانه‌ها در این هفته
+            </h2>
+          </div>
+
+          <div class="origin-list">
+
+            <div class="origin-item">
+              <div>
+                <strong>برزیل</strong>
+                <span>قهوه عربیکا</span>
+              </div>
+              <b>42%</b>
+            </div>
+
+            <div class="origin-item">
+              <div>
+                <strong>کلمبیا</strong>
+                <span>قهوه عربیکا</span>
+              </div>
+              <b>31%</b>
+            </div>
+
+            <div class="origin-item">
+              <div>
+                <strong>اتیوپی</strong>
+                <span>قهوه عربیکا</span>
+              </div>
+              <b>17%</b>
+            </div>
+
+            <div class="origin-item">
+              <div>
+                <strong>گواتمالا</strong>
+                <span>قهوه عربیکا</span>
+              </div>
+              <b>10%</b>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="panel table-panel">
+
+        <div class="panel-head">
+
+          <h2>
+            دسته‌های اخیر
+          </h2>
+
+          <span class="panel-note">
+            ۶ دسته آخر
+          </span>
+
+        </div>
+
+        <table class="batch-table">
+
+          <thead>
+            <tr>
+              <th>کد دسته</th>
+              <th>محل کشت</th>
+              <th>وزن اولیه</th>
+              <th>کاهش وزن</th>
+              <th>میزان برشته‌شدن</th>
+              <th>وضعیت</th>
+            </tr>
+          </thead>
+
+          <tbody id="dashboardRows"></tbody>
+
+        </table>
+
+      </section>
+
     </section>
+
+
+    <!-- ================= BATCHES ================= -->
+
+    <section class="page" id="batches">
+
+      <header class="topbar">
+
+        <div>
+          <h1>دسته‌ها</h1>
+          <p class="subtitle">
+            مدیریت و مشاهده دسته‌های برشته‌شده
+          </p>
+        </div>
+
+        <button class="primary-btn">
+          + دسته جدید
+        </button>
+
+      </header>
+
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <span>تعداد کل دسته‌ها</span>
+          <strong>128</strong>
+          <small>در این ماه</small>
+        </div>
+
+        <div class="stat-card">
+          <span>مجموع وزن</span>
+          <strong>486 kg</strong>
+          <small>این ماه</small>
+        </div>
+
+        <div class="stat-card">
+          <span>میانگین کاهش وزن</span>
+          <strong>15.8%</strong>
+          <small>در تمام دسته‌ها</small>
+        </div>
+
+        <div class="stat-card">
+          <span>دسته‌های امروز</span>
+          <strong>8</strong>
+          <small>۲ دسته در حال انجام</small>
+        </div>
+
+      </div>
+
+
+      <section class="panel">
+
+        <div class="panel-head">
+
+          <h2>
+            همه دسته‌ها
+          </h2>
+
+          <input
+            type="text"
+            id="batchSearch"
+            class="search"
+            placeholder="جست‌وجوی دسته...">
+
+        </div>
+
+
+        <table class="batch-table">
+
+          <thead>
+            <tr>
+              <th>کد دسته</th>
+              <th>محل کشت</th>
+              <th>تاریخ</th>
+              <th>وزن اولیه</th>
+              <th>کاهش وزن</th>
+              <th>میزان برشته‌شدن</th>
+              <th>وضعیت</th>
+            </tr>
+          </thead>
+
+          <tbody id="allBatchRows"></tbody>
+
+        </table>
+
+      </section>
+
+    </section>
+
+
+    <!-- ================= BLENDS ================= -->
+
+    <section class="page" id="blends">
+
+      <header class="topbar">
+
+        <div>
+          <h1>ترکیب قهوه‌ها</h1>
+
+          <p class="subtitle">
+            ترکیب دانه‌ها و محصولات آماده
+          </p>
+        </div>
+
+        <button class="primary-btn">
+          + ترکیب جدید
+        </button>
+
+      </header>
+
+
+      <div class="blend-grid">
+
+        <div class="blend-card">
+
+          <div class="blend-top">
+            <span class="blend-code">
+              BL-001
+            </span>
+
+            <span class="status ready">
+              آماده فروش
+            </span>
+          </div>
+
+          <h2>
+            خانه
+          </h2>
+
+          <p>
+            ترکیبی متعادل برای استفاده روزانه
+          </p>
+
+          <div class="blend-progress">
+
+            <div>
+              <span>برزیل</span>
+              <b>60%</b>
+            </div>
+
+            <div class="progress">
+              <i style="width:60%"></i>
+            </div>
+
+          </div>
+
+          <div class="blend-progress">
+
+            <div>
+              <span>کلمبیا</span>
+              <b>25%</b>
+            </div>
+
+            <div class="progress">
+              <i style="width:25%"></i>
+            </div>
+
+          </div>
+
+          <div class="blend-progress">
+
+            <div>
+              <span>اتیوپی</span>
+              <b>15%</b>
+            </div>
+
+            <div class="progress">
+              <i style="width:15%"></i>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="blend-card">
+
+          <div class="blend-top">
+
+            <span class="blend-code">
+              BL-002
+            </span>
+
+            <span class="status roasting">
+              در حال آماده‌سازی
+            </span>
+
+          </div>
+
+          <h2>
+            اسپرسو
+          </h2>
+
+          <p>
+            طعمی قوی با رایحه شکلات و آجیل
+          </p>
+
+          <div class="blend-progress">
+
+            <div>
+              <span>برزیل</span>
+              <b>50%</b>
+            </div>
+
+            <div class="progress">
+              <i style="width:50%"></i>
+            </div>
+
+          </div>
+
+          <div class="blend-progress">
+
+            <div>
+              <span>گواتمالا</span>
+              <b>30%</b>
+            </div>
+
+            <div class="progress">
+              <i style="width:30%"></i>
+            </div>
+
+          </div>
+
+          <div class="blend-progress">
+
+            <div>
+              <span>کلمبیا</span>
+              <b>20%</b>
+            </div>
+
+            <div class="progress">
+              <i style="width:20%"></i>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="blend-card">
+
+          <div class="blend-top">
+
+            <span class="blend-code">
+              BL-003
+            </span>
+
+            <span class="status ready">
+              آماده فروش
+            </span>
+
+          </div>
+
+          <h2>
+            صبحانه
+          </h2>
+
+          <p>
+            طعمی ملایم و میوه‌ای برای شروع روز
+          </p>
+
+          <div class="blend-progress">
+
+            <div>
+              <span>اتیوپی</span>
+              <b>55%</b>
+            </div>
+
+            <div class="progress">
+              <i style="width:55%"></i>
+            </div>
+
+          </div>
+
+          <div class="blend-progress">
+
+            <div>
+              <span>کلمبیا</span>
+              <b>45%</b>
+            </div>
+
+            <div class="progress">
+              <i style="width:45%"></i>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= MACHINE ================= -->
+
+    <section class="page" id="machine">
+
+      <header class="topbar">
+
+        <div>
+          <h1>وضعیت دستگاه</h1>
+
+          <p class="subtitle">
+            وضعیت لحظه‌ای دستگاه برشته‌کاری
+          </p>
+        </div>
+
+        <div class="machine-status">
+          <span class="dot"></span>
+          دستگاه روشن است
+        </div>
+
+      </header>
+
+
+      <div class="machine-grid">
+
+        <div class="machine-card main-machine">
+
+          <div class="machine-icon">
+            ◉
+          </div>
+
+          <div>
+            <span>
+              دمای فعلی دستگاه
+            </span>
+
+            <strong id="machineTemp">
+              198°C
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="machine-card">
+
+          <span>
+            دمای هوای خروجی
+          </span>
+
+          <strong>
+            184°C
+          </strong>
+
+          <small>
+            وضعیت عادی
+          </small>
+
+        </div>
+
+
+        <div class="machine-card">
+
+          <span>
+            زمان فعالیت امروز
+          </span>
+
+          <strong>
+            04:32
+          </strong>
+
+          <small>
+            ساعت:دقیقه
+          </small>
+
+        </div>
+
+
+        <div class="machine-card">
+
+          <span>
+            دسته‌های امروز
+          </span>
+
+          <strong>
+            8
+          </strong>
+
+          <small>
+            ۶ دسته تکمیل شده
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <section class="panel machine-details">
+
+        <div class="panel-head">
+          <h2>
+            وضعیت دستگاه
+          </h2>
+
+          <span class="status ready">
+            همه‌چیز عادی است
+          </span>
+        </div>
+
+
+        <div class="health-row">
+
+          <div>
+            <span>دمای دستگاه</span>
+            <b>طبیعی</b>
+          </div>
+
+          <div class="health-bar">
+            <i style="width:72%"></i>
+          </div>
+
+        </div>
+
+
+        <div class="health-row">
+
+          <div>
+            <span>سیستم تهویه</span>
+            <b>طبیعی</b>
+          </div>
+
+          <div class="health-bar">
+            <i style="width:88%"></i>
+          </div>
+
+        </div>
+
+
+        <div class="health-row">
+
+          <div>
+            <span>مصرف انرژی</span>
+            <b>مناسب</b>
+          </div>
+
+          <div class="health-bar">
+            <i style="width:46%"></i>
+          </div>
+
+        </div>
+
+
+        <div class="health-row">
+
+          <div>
+            <span>وضعیت کلی</span>
+            <b>عالی</b>
+          </div>
+
+          <div class="health-bar">
+            <i style="width:94%"></i>
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
   </main>
 
-  <footer class="footer"><div class="wrap">© 2026 Mahan Selyari · Frontend Developer</div></footer>
+</div>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
