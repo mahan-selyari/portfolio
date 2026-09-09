@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LUXORA — Timeless Objects</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="header">
+
+    <a href="#" class="logo">
+      LUXORA
+    </a>
+
+    <nav class="nav">
+      <a href="#shop">Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="#story">Our Story</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <button class="icon-btn" id="searchBtn" aria-label="Search">
+        ⌕
+      </button>
+
+      <button class="icon-btn" id="themeBtn" aria-label="Theme">
+        ◐
+      </button>
+
+      <button class="cart-btn" id="cartBtn">
+        Bag
+        <span id="cartCount">0</span>
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= SEARCH ================= -->
+
+  <div class="search-overlay" id="searchOverlay">
+
+    <div class="search-box">
+
+      <button class="close-search" id="closeSearch">
+        ×
+      </button>
+
+      <span>Search products</span>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search watches, accessories..."
+        autocomplete="off"
+      >
+
+      <div id="searchResults"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          THE NEW STANDARD
+        </span>
+
+        <h1>
+          Objects made
+          <em>to last.</em>
+        </h1>
+
+        <p>
+          A considered collection of timeless watches
+          and everyday objects designed for people
+          who value the details.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#shop" class="btn btn-dark">
+            Explore collection
+            <span>→</span>
+          </a>
+
+          <a href="#story" class="text-link">
+            Discover our story
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <div class="hero-badge">
+          <span>EST.</span>
+          <strong>2018</strong>
+        </div>
+
+        <div class="watch-display">
+          <div class="watch-face">
+            <span class="watch-brand">LX</span>
+            <span class="watch-time">10:10</span>
+            <span class="watch-date">18</span>
+          </div>
+
+          <div class="watch-strap top"></div>
+          <div class="watch-strap bottom"></div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= MARQUEE ================= -->
+
+    <div class="marquee">
+
+      <div class="marquee-track">
+
+        <span>TIMELESS DESIGN</span>
+        <i>✦</i>
+
+        <span>SWISS MOVEMENT</span>
+        <i>✦</i>
+
+        <span>FREE SHIPPING</span>
+        <i>✦</i>
+
+        <span>2 YEAR WARRANTY</span>
+        <i>✦</i>
+
+        <span>TIMELESS DESIGN</span>
+        <i>✦</i>
+
+        <span>SWISS MOVEMENT</span>
+        <i>✦</i>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= SHOP ================= -->
+
+    <section class="shop section" id="shop">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="eyebrow">
+            THE COLLECTION
+          </span>
+
+          <h2>
+            Find your <em>everyday icon.</em>
+          </h2>
+        </div>
+
+        <p>
+          Refined essentials built around
+          precision, simplicity and character.
+        </p>
+
+      </div>
+
+
+      <div class="shop-toolbar">
+
+        <div class="categories">
+
+          <button
+            class="filter-btn active"
+            data-category="all">
+            All
+          </button>
+
+          <button
+            class="filter-btn"
+            data-category="watch">
+            Watches
+          </button>
+
+          <button
+            class="filter-btn"
+            data-category="accessory">
+            Accessories
+          </button>
+
+        </div>
+
+        <select id="sortSelect">
+          <option value="default">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="new">Newest</option>
+        </select>
+
+      </div>
+
+
+      <div class="products-grid" id="productsGrid"></div>
+
+    </section>
+
+
+    <!-- ================= FEATURE ================= -->
+
+    <section class="feature-section" id="collections">
+
+      <div class="feature-image">
+
+        <div class="feature-watch">
+          <div class="watch-face silver">
+            <span class="watch-brand">LX</span>
+            <span class="watch-time">08:24</span>
+            <span class="watch-date">09</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="feature-content">
+
+        <span class="eyebrow">
+          THE ATLAS SERIES
+        </span>
+
+        <h2>
+          Designed for
+          <em>everywhere.</em>
+        </h2>
+
+        <p>
+          Built with a scratch-resistant sapphire crystal,
+          stainless steel case and Swiss automatic movement.
+          Atlas was designed to move with you.
+        </p>
+
+        <ul class="features">
+
+          <li>
+            <span>01</span>
+            Sapphire crystal
+          </li>
+
+          <li>
+            <span>02</span>
+            Automatic movement
+          </li>
+
+          <li>
+            <span>03</span>
+            100m water resistance
+          </li>
+
+        </ul>
+
+        <button class="btn btn-light" id="featureBtn">
+          Discover Atlas
+          <span>→</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= STORY ================= -->
+
+    <section class="story section" id="story">
+
+      <div class="story-heading">
+
+        <span class="eyebrow">
+          OUR PHILOSOPHY
+        </span>
+
+        <h2>
+          Less noise.
+          <br>
+          <em>More meaning.</em>
+        </h2>
+
+      </div>
+
+      <div class="story-text">
+
+        <p>
+          We believe the best objects don't ask for attention.
+          They earn it.
+        </p>
+
+        <p>
+          LUXORA creates pieces that become part of your
+          everyday life — quietly, intentionally and
+          beautifully.
+        </p>
+
+        <a href="#" class="text-link">
+          Read our story →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= NEWSLETTER ================= -->
+
+    <section class="newsletter">
+
+      <div>
+
+        <span class="eyebrow">
+          STAY IN THE LOOP
+        </span>
+
+        <h2>
+          Good things take
+          <em>time.</em>
+        </h2>
+
+      </div>
+
+      <form id="newsletterForm">
+
+        <input
+          type="email"
+          id="emailInput"
+          placeholder="Your email address"
+          required
+        >
+
+        <button type="submit">
+          Subscribe →
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= CART ================= -->
+
+  <aside class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+
+      <div>
+        <span class="eyebrow">
+          YOUR BAG
+        </span>
+
+        <h2>
+          Shopping bag
+        </h2>
+      </div>
+
+      <button id="closeCart">
+        ×
+      </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+
+      <div>
+        <span>Subtotal</span>
+        <strong id="cartTotal">
+          $0
+        </strong>
+      </div>
+
+      <button class="checkout-btn" id="checkoutBtn">
+        Checkout
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+
+
+  <!-- ================= PRODUCT MODAL ================= -->
+
+  <div class="modal" id="productModal">
+
+    <div class="modal-content">
+
+      <button class="modal-close" id="modalClose">
+        ×
+      </button>
+
+      <div class="modal-product" id="modalProduct"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= TOAST ================= -->
+
+  <div class="toast" id="toast">
+    Added to your bag
+  </div>
+
+
+  <footer>
+
+    <div class="footer-logo">
+      LUXORA
+    </div>
+
+    <p>
+      Timeless objects for modern living.
+    </p>
+
+    <span>
+      © 2026 LUXORA
+    </span>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
