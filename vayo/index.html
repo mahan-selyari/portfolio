@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VAYO — Stay Somewhere Extraordinary</title>
+
+    <script>
+        tailwind = {
+            config: {
+                darkMode: "class"
+            }
+        }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <script defer src="script.js"></script>
+</head>
+
+
+<body class="bg-[#f7f5f0] font-['DM_Sans'] text-[#1d241f] transition-colors duration-300 dark:bg-[#101411] dark:text-white">
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header
+    class="absolute left-0 right-0 top-0 z-50 border-b border-white/20 text-white"
+>
+
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
+
+        <!-- Logo -->
+
+        <a
+            href="#"
+            class="font-['Playfair_Display'] text-3xl font-semibold tracking-tight"
+        >
+            VAYO
+        </a>
+
+
+        <!-- Desktop navigation -->
+
+        <nav class="hidden items-center gap-8 text-sm font-medium lg:flex">
+
+            <a
+                href="#stays"
+                class="transition hover:text-white/70"
+            >
+                Stays
+            </a>
+
+            <a
+                href="#destinations"
+                class="transition hover:text-white/70"
+            >
+                Destinations
+            </a>
+
+            <a
+                href="#experiences"
+                class="transition hover:text-white/70"
+            >
+                Experiences
+            </a>
+
+            <a
+                href="#about"
+                class="transition hover:text-white/70"
+            >
+                About
+            </a>
+
+        </nav>
+
+
+        <div class="flex items-center gap-2">
+
+            <button
+                id="themeBtn"
+                class="hidden h-10 w-10 items-center justify-center rounded-full border border-white/30 transition hover:bg-white/10 sm:flex"
+            >
+                ☼
+            </button>
+
+
+            <button
+                id="favoritesBtn"
+                class="relative flex h-10 w-10 items-center justify-center rounded-full border border-white/30 transition hover:bg-white/10"
+            >
+                ♡
+
+                <span
+                    id="favoriteCount"
+                    class="absolute -right-1 -top-1 hidden h-5 min-w-5 items-center justify-center rounded-full bg-[#c7a77b] px-1 text-[10px] font-bold text-white"
+                >
+                    0
+                </span>
+
+            </button>
+
+
+            <button
+                id="mobileMenuBtn"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 lg:hidden"
+            >
+                ☰
+            </button>
+
+
+            <button
+                class="hidden rounded-full bg-white px-5 py-2.5 text-sm font-bold text-[#1d241f] transition hover:bg-[#eeeae2] sm:block"
+            >
+                List your place
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Mobile menu -->
+
+    <div
+        id="mobileMenu"
+        class="hidden border-t border-white/20 bg-[#162019]/95 px-5 py-6 backdrop-blur-xl lg:hidden"
+    >
+
+        <div class="flex flex-col gap-5 text-sm">
+
+            <a href="#stays">Stays</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#experiences">Experiences</a>
+            <a href="#about">About</a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="relative flex min-h-[760px] items-center overflow-hidden bg-cover bg-center"
+    style="
+        background-image:
+        linear-gradient(
+            90deg,
+            rgba(13,25,18,.78),
+            rgba(13,25,18,.25)
+        ),
+        url('https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=2200&q=85');
+    "
+>
+
+    <div class="absolute inset-0 bg-black/10"></div>
+
+
+    <div class="relative mx-auto w-full max-w-7xl px-5 pt-28 lg:px-8">
+
+        <div class="max-w-3xl">
+
+            <p
+                class="mb-5 text-sm font-semibold uppercase tracking-[0.3em] text-[#dbc39e]"
+            >
+                Curated stays around the world
+            </p>
+
+
+            <h1
+                class="font-['Playfair_Display'] text-5xl leading-[1.05] text-white sm:text-6xl lg:text-8xl"
+            >
+                Stay somewhere
+                <span class="italic text-[#dbc39e]">
+                    extraordinary.
+                </span>
+            </h1>
+
+
+            <p
+                class="mt-7 max-w-xl text-base leading-7 text-white/75 sm:text-lg"
+            >
+                Discover private villas, boutique hotels and hidden
+                retreats designed for unforgettable escapes.
+            </p>
+
+        </div>
+
+
+
+        <!-- Search box -->
+
+        <div
+            class="mt-12 rounded-3xl border border-white/20 bg-white/95 p-3 shadow-2xl backdrop-blur-xl dark:bg-[#171c18]/95 sm:p-4"
+        >
+
+            <div class="grid grid-cols-1 gap-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_auto]">
+
+
+                <!-- Destination -->
+
+                <div
+                    class="rounded-2xl px-5 py-3 transition hover:bg-black/5 dark:hover:bg-white/5"
+                >
+
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                        Destination
+                    </label>
+
+                    <input
+                        id="destinationInput"
+                        type="text"
+                        placeholder="Where are you going?"
+                        class="mt-1 w-full bg-transparent text-sm font-semibold outline-none placeholder:text-slate-400 dark:text-white"
+                    >
+
+                </div>
+
+
+
+                <!-- Check in -->
+
+                <div
+                    class="rounded-2xl px-5 py-3 transition hover:bg-black/5 dark:hover:bg-white/5"
+                >
+
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                        Check in
+                    </label>
+
+                    <input
+                        id="checkIn"
+                        type="date"
+                        class="mt-1 w-full bg-transparent text-sm font-semibold outline-none dark:text-white"
+                    >
+
+                </div>
+
+
+
+                <!-- Check out -->
+
+                <div
+                    class="rounded-2xl px-5 py-3 transition hover:bg-black/5 dark:hover:bg-white/5"
+                >
+
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                        Check out
+                    </label>
+
+                    <input
+                        id="checkOut"
+                        type="date"
+                        class="mt-1 w-full bg-transparent text-sm font-semibold outline-none dark:text-white"
+                    >
+
+                </div>
+
+
+
+                <!-- Guests -->
+
+                <div
+                    class="rounded-2xl px-5 py-3 transition hover:bg-black/5 dark:hover:bg-white/5"
+                >
+
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                        Guests
+                    </label>
+
+                    <button
+                        id="guestBtn"
+                        class="mt-1 flex w-full items-center justify-between text-left text-sm font-semibold"
+                    >
+                        <span id="guestText">
+                            2 guests
+                        </span>
+
+                        <span>
+                           ⌄
+                        </span>
+                    </button>
+
+                </div>
+
+
+
+                <!-- Search -->
+
+                <button
+                    id="searchBtn"
+                    class="flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-[#1c3325] px-7 font-bold text-white transition hover:bg-[#284832]"
+                >
+                    <span>Search</span>
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <!-- Guests popup -->
+
+            <div
+                id="guestPopup"
+                class="absolute z-30 mt-2 hidden w-64 rounded-2xl border border-slate-200 bg-white p-5 text-slate-900 shadow-2xl dark:border-white/10 dark:bg-[#171c18] dark:text-white"
+            >
+
+                <div class="flex items-center justify-between">
+
+                    <div>
+                        <p class="text-sm font-bold">
+                            Guests
+                        </p>
+
+                        <p class="text-xs text-slate-400">
+                            Adults & children
+                        </p>
+                    </div>
+
+
+                    <div class="flex items-center gap-3">
+
+                        <button
+                            id="minusGuest"
+                            class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-white/10"
+                        >
+                            −
+                        </button>
+
+                        <span
+                            id="guestNumber"
+                            class="w-5 text-center font-bold"
+                        >
+                            2
+                        </span>
+
+                        <button
+                            id="plusGuest"
+                            class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1c3325] text-white"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="mt-7 flex flex-wrap gap-3 text-xs text-white/70">
+
+            <span class="rounded-full border border-white/20 px-4 py-2">
+                ✓ Verified properties
+            </span>
+
+            <span class="rounded-full border border-white/20 px-4 py-2">
+                ✓ Flexible cancellation
+            </span>
+
+            <span class="rounded-full border border-white/20 px-4 py-2">
+                ✓ Secure booking
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURED DESTINATIONS
+===================================================== -->
+
+<section
+    id="destinations"
+    class="mx-auto max-w-7xl px-5 py-24 lg:px-8"
+>
+
+    <div class="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+
+        <div>
+
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#9b8060]">
+                Explore
+            </p>
+
+            <h2
+                class="font-['Playfair_Display'] text-4xl sm:text-5xl"
+            >
+                Where will you go?
+            </h2>
+
+        </div>
+
+
+        <button
+            class="text-sm font-bold underline underline-offset-4"
+        >
+            Explore all destinations →
+        </button>
+
+    </div>
+
+
+
+    <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+
+        <button
+            data-destination="Bali"
+            class="destination-card group relative h-72 overflow-hidden rounded-3xl text-left lg:h-96"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=85"
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                alt="Bali"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+
+            <div class="absolute bottom-6 left-6 text-white">
+
+                <p class="text-xs text-white/70">
+                    Indonesia
+                </p>
+
+                <h3 class="mt-1 font-['Playfair_Display'] text-2xl">
+                    Bali
+                </h3>
+
+            </div>
+
+        </button>
+
+
+
+        <button
+            data-destination="Amalfi"
+            class="destination-card group relative h-72 overflow-hidden rounded-3xl text-left lg:h-96"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85"
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                alt="Amalfi"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+
+            <div class="absolute bottom-6 left-6 text-white">
+
+                <p class="text-xs text-white/70">
+                    Italy
+                </p>
+
+                <h3 class="mt-1 font-['Playfair_Display'] text-2xl">
+                    Amalfi
+                </h3>
+
+            </div>
+
+        </button>
+
+
+
+        <button
+            data-destination="Santorini"
+            class="destination-card group relative h-72 overflow-hidden rounded-3xl text-left lg:h-96"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1000&q=85"
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                alt="Santorini"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+
+            <div class="absolute bottom-6 left-6 text-white">
+
+                <p class="text-xs text-white/70">
+                    Greece
+                </p>
+
+                <h3 class="mt-1 font-['Playfair_Display'] text-2xl">
+                    Santorini
+                </h3>
+
+            </div>
+
+        </button>
+
+
+
+        <button
+            data-destination="Swiss Alps"
+            class="destination-card group relative h-72 overflow-hidden rounded-3xl text-left lg:h-96"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=85"
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                alt="Swiss Alps"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+
+            <div class="absolute bottom-6 left-6 text-white">
+
+                <p class="text-xs text-white/70">
+                    Switzerland
+                </p>
+
+                <h3 class="mt-1 font-['Playfair_Display'] text-2xl">
+                    Swiss Alps
+                </h3>
+
+            </div>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STAYS
+===================================================== -->
+
+<section
+    id="stays"
+    class="bg-[#eeeae2] px-5 py-24 dark:bg-[#151a16] lg:px-8"
+>
+
+    <div class="mx-auto max-w-7xl">
+
+
+        <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+
+            <div>
+
+                <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#9b8060]">
+                    Handpicked for you
+                </p>
+
+                <h2
+                    class="font-['Playfair_Display'] text-4xl sm:text-5xl"
+                >
+                    Exceptional stays
+                </h2>
+
+            </div>
+
+
+            <!-- Filters -->
+
+            <div class="flex flex-wrap gap-2">
+
+                <button
+                    data-filter="all"
+                    class="filter-btn rounded-full bg-[#1c3325] px-5 py-2.5 text-xs font-bold text-white"
+                >
+                    All
+                </button>
+
+                <button
+                    data-filter="villa"
+                    class="filter-btn rounded-full border border-slate-300 px-5 py-2.5 text-xs font-bold dark:border-white/10"
+                >
+                    Villas
+                </button>
+
+                <button
+                    data-filter="hotel"
+                    class="filter-btn rounded-full border border-slate-300 px-5 py-2.5 text-xs font-bold dark:border-white/10"
+                >
+                    Hotels
+                </button>
+
+                <button
+                    data-filter="cabin"
+                    class="filter-btn rounded-full border border-slate-300 px-5 py-2.5 text-xs font-bold dark:border-white/10"
+                >
+                    Cabins
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Search result -->
+
+        <p
+            id="resultMessage"
+            class="mb-6 hidden text-sm font-semibold text-[#6f7f70]"
+        ></p>
+
+
+
+        <div
+            id="propertyGrid"
+            class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3"
+        >
+
+
+            <!-- PROPERTY 1 -->
+
+            <article
+                class="property-card group"
+                data-type="villa"
+                data-location="Bali"
+                data-price="185"
+                data-rating="4.9"
+            >
+
+                <div class="relative overflow-hidden rounded-3xl">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1200&q=85"
+                        class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                        alt="Villa Aria"
+                    >
+
+
+                    <button
+                        class="favorite absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-lg shadow-lg backdrop-blur"
+                        data-id="villa-aria"
+                    >
+                        ♡
+                    </button>
+
+
+                    <span
+                        class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-bold text-[#1c3325]"
+                    >
+                        Guest favorite
+                    </span>
+
+                </div>
+
+
+                <div class="pt-4">
+
+                    <div class="flex items-start justify-between gap-3">
+
+                        <div>
+
+                            <h3 class="font-['Playfair_Display'] text-xl font-semibold">
+                                Villa Aria
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                Ubud, Bali
+                            </p>
+
+                        </div>
+
+
+                        <span class="text-sm font-bold">
+                            ★ 4.9
+                        </span>
+
+                    </div>
+
+
+                    <div class="mt-4 flex items-center justify-between">
+
+                        <p class="text-sm">
+
+                            <strong class="text-base">
+                                $185
+                            </strong>
+
+                            <span class="text-slate-400">
+                                / night
+                            </span>
+
+                        </p>
+
+
+                        <button
+                            class="book-btn rounded-full bg-[#1c3325] px-4 py-2 text-xs font-bold text-white transition hover:bg-[#284832]"
+                            data-property="Villa Aria"
+                            data-price="185"
+                        >
+                            View stay
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROPERTY 2 -->
+
+            <article
+                class="property-card group"
+                data-type="hotel"
+                data-location="Amalfi"
+                data-price="240"
+                data-rating="4.8"
+            >
+
+                <div class="relative overflow-hidden rounded-3xl">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85"
+                        class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                        alt="Casa Mare"
+                    >
+
+
+                    <button
+                        class="favorite absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-lg shadow-lg backdrop-blur"
+                        data-id="casa-mare"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="pt-4">
+
+                    <div class="flex items-start justify-between gap-3">
+
+                        <div>
+
+                            <h3 class="font-['Playfair_Display'] text-xl font-semibold">
+                                Casa Mare
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                Amalfi Coast, Italy
+                            </p>
+
+                        </div>
+
+
+                        <span class="text-sm font-bold">
+                            ★ 4.8
+                        </span>
+
+                    </div>
+
+
+                    <div class="mt-4 flex items-center justify-between">
+
+                        <p class="text-sm">
+
+                            <strong class="text-base">
+                                $240
+                            </strong>
+
+                            <span class="text-slate-400">
+                                / night
+                            </span>
+
+                        </p>
+
+
+                        <button
+                            class="book-btn rounded-full bg-[#1c3325] px-4 py-2 text-xs font-bold text-white"
+                            data-property="Casa Mare"
+                            data-price="240"
+                        >
+                            View stay
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROPERTY 3 -->
+
+            <article
+                class="property-card group"
+                data-type="cabin"
+                data-location="Swiss Alps"
+                data-price="210"
+                data-rating="4.9"
+            >
+
+                <div class="relative overflow-hidden rounded-3xl">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1200&q=85"
+                        class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                        alt="Nordic Cabin"
+                    >
+
+
+                    <button
+                        class="favorite absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-lg shadow-lg backdrop-blur"
+                        data-id="nordic-cabin"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="pt-4">
+
+                    <div class="flex items-start justify-between gap-3">
+
+                        <div>
+
+                            <h3 class="font-['Playfair_Display'] text-xl font-semibold">
+                                Nordic Cabin
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                Zermatt, Switzerland
+                            </p>
+
+                        </div>
+
+
+                        <span class="text-sm font-bold">
+                            ★ 4.9
+                        </span>
+
+                    </div>
+
+
+                    <div class="mt-4 flex items-center justify-between">
+
+                        <p class="text-sm">
+
+                            <strong class="text-base">
+                                $210
+                            </strong>
+
+                            <span class="text-slate-400">
+                                / night
+                            </span>
+
+                        </p>
+
+
+                        <button
+                            class="book-btn rounded-full bg-[#1c3325] px-4 py-2 text-xs font-bold text-white"
+                            data-property="Nordic Cabin"
+                            data-price="210"
+                        >
+                            View stay
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROPERTY 4 -->
+
+            <article
+                class="property-card group"
+                data-type="villa"
+                data-location="Santorini"
+                data-price="290"
+                data-rating="4.9"
+            >
+
+                <div class="relative overflow-hidden rounded-3xl">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=85"
+                        class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                        alt="Aegean House"
+                    >
+
+
+                    <button
+                        class="favorite absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-lg shadow-lg backdrop-blur"
+                        data-id="aegean-house"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="pt-4">
+
+                    <div class="flex items-start justify-between gap-3">
+
+                        <div>
+
+                            <h3 class="font-['Playfair_Display'] text-xl font-semibold">
+                                Aegean House
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                Santorini, Greece
+                            </p>
+
+                        </div>
+
+
+                        <span class="text-sm font-bold">
+                            ★ 4.9
+                        </span>
+
+                    </div>
+
+
+                    <div class="mt-4 flex items-center justify-between">
+
+                        <p class="text-sm">
+
+                            <strong class="text-base">
+                                $290
+                            </strong>
+
+                            <span class="text-slate-400">
+                                / night
+                            </span>
+
+                        </p>
+
+
+                        <button
+                            class="book-btn rounded-full bg-[#1c3325] px-4 py-2 text-xs font-bold text-white"
+                            data-property="Aegean House"
+                            data-price="290"
+                        >
+                            View stay
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROPERTY 5 -->
+
+            <article
+                class="property-card group"
+                data-type="hotel"
+                data-location="Kyoto"
+                data-price="175"
+                data-rating="4.7"
+            >
+
+                <div class="relative overflow-hidden rounded-3xl">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85"
+                        class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                        alt="Mori House"
+                    >
+
+
+                    <button
+                        class="favorite absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-lg shadow-lg backdrop-blur"
+                        data-id="mori-house"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="pt-4">
+
+                    <div class="flex items-start justify-between gap-3">
+
+                        <div>
+
+                            <h3 class="font-['Playfair_Display'] text-xl font-semibold">
+                                Mori House
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                Kyoto, Japan
+                            </p>
+
+                        </div>
+
+
+                        <span class="text-sm font-bold">
+                            ★ 4.7
+                        </span>
+
+                    </div>
+
+
+                    <div class="mt-4 flex items-center justify-between">
+
+                        <p class="text-sm">
+
+                            <strong class="text-base">
+                                $175
+                            </strong>
+
+                            <span class="text-slate-400">
+                                / night
+                            </span>
+
+                        </p>
+
+
+                        <button
+                            class="book-btn rounded-full bg-[#1c3325] px-4 py-2 text-xs font-bold text-white"
+                            data-property="Mori House"
+                            data-price="175"
+                        >
+                            View stay
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROPERTY 6 -->
+
+            <article
+                class="property-card group"
+                data-type="villa"
+                data-location="Tulum"
+                data-price="225"
+                data-rating="4.8"
+            >
+
+                <div class="relative overflow-hidden rounded-3xl">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85"
+                        class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                        alt="Casa Verde"
+                    >
+
+
+                    <button
+                        class="favorite absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-lg shadow-lg backdrop-blur"
+                        data-id="casa-verde"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="pt-4">
+
+                    <div class="flex items-start justify-between gap-3">
+
+                        <div>
+
+                            <h3 class="font-['Playfair_Display'] text-xl font-semibold">
+                                Casa Verde
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                Tulum, Mexico
+                            </p>
+
+                        </div>
+
+
+                        <span class="text-sm font-bold">
+                            ★ 4.8
+                        </span>
+
+                    </div>
+
+
+                    <div class="mt-4 flex items-center justify-between">
+
+                        <p class="text-sm">
+
+                            <strong class="text-base">
+                                $225
+                            </strong>
+
+                            <span class="text-slate-400">
+                                / night
+                            </span>
+
+                        </p>
+
+
+                        <button
+                            class="book-btn rounded-full bg-[#1c3325] px-4 py-2 text-xs font-bold text-white"
+                            data-property="Casa Verde"
+                            data-price="225"
+                        >
+                            View stay
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section
+    id="experiences"
+    class="mx-auto max-w-7xl px-5 py-24 lg:px-8"
+>
+
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+
+
+        <div class="relative">
+
+            <img
+                src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1400&q=85"
+                class="h-[600px] w-full rounded-[2rem] object-cover"
+                alt="Travel experience"
+            >
+
+
+            <div
+                class="absolute -bottom-7 -right-4 max-w-xs rounded-3xl bg-white p-6 shadow-2xl dark:bg-[#1b211d] sm:-right-7"
+            >
+
+                <div class="mb-3 text-2xl">
+                    ✦
+                </div>
+
+                <p class="font-['Playfair_Display'] text-xl">
+                    "The best trips are the ones you remember without looking at photos."
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+
+            <p class="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-[#9b8060]">
+                Beyond the stay
+            </p>
+
+
+            <h2
+                class="font-['Playfair_Display'] text-4xl leading-tight sm:text-5xl"
+            >
+                Travel is more than a destination.
+            </h2>
+
+
+            <p class="mt-6 leading-8 text-slate-500 dark:text-slate-400">
+                From private sailing trips to hidden mountain trails,
+                discover experiences created by locals who know their
+                destination better than anyone.
+            </p>
+
+
+            <div class="mt-9 space-y-5">
+
+
+                <div class="flex gap-4">
+
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#e9e3d8] dark:bg-white/5">
+                        ◇
+                    </div>
+
+                    <div>
+
+                        <h3 class="font-bold">
+                            Local experiences
+                        </h3>
+
+                        <p class="mt-1 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                            Discover experiences beyond typical tourist routes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="flex gap-4">
+
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#e9e3d8] dark:bg-white/5">
+                        ♢
+                    </div>
+
+                    <div>
+
+                        <h3 class="font-bold">
+                            Trusted hosts
+                        </h3>
+
+                        <p class="mt-1 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                            Every host and property goes through our verification process.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="flex gap-4">
+
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#e9e3d8] dark:bg-white/5">
+                        ↗
+                    </div>
+
+                    <div>
+
+                        <h3 class="font-bold">
+                            Designed for discovery
+                        </h3>
+
+                        <p class="mt-1 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                            Find places that match the way you actually want to travel.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="mt-10 rounded-full bg-[#1c3325] px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#284832]"
+            >
+                Explore experiences →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRUST
+===================================================== -->
+
+<section
+    id="about"
+    class="border-y border-[#ddd8ce] bg-white px-5 py-20 dark:border-white/10 dark:bg-[#111611] lg:px-8"
+>
+
+    <div class="mx-auto max-w-7xl">
+
+        <div class="grid grid-cols-2 gap-10 text-center lg:grid-cols-4">
+
+            <div>
+                <strong class="text-4xl font-bold">
+                    12K+
+                </strong>
+
+                <p class="mt-2 text-sm text-slate-500">
+                    Unique stays
+                </p>
+            </div>
+
+
+            <div>
+                <strong class="text-4xl font-bold">
+                    86
+                </strong>
+
+                <p class="mt-2 text-sm text-slate-500">
+                    Countries
+                </p>
+            </div>
+
+
+            <div>
+                <strong class="text-4xl font-bold">
+                    4.9
+                </strong>
+
+                <p class="mt-2 text-sm text-slate-500">
+                    Average rating
+                </p>
+            </div>
+
+
+            <div>
+                <strong class="text-4xl font-bold">
+                    98%
+                </strong>
+
+                <p class="mt-2 text-sm text-slate-500">
+                    Happy guests
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NEWSLETTER
+===================================================== -->
+
+<section class="px-5 py-24 lg:px-8">
+
+    <div
+        class="mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-[#1c3325] px-6 py-16 text-center text-white sm:px-12"
+    >
+
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#cdb993]">
+            The VAYO journal
+        </p>
+
+
+        <h2
+            class="mx-auto mt-4 max-w-2xl font-['Playfair_Display'] text-4xl sm:text-5xl"
+        >
+            Get inspired before you pack.
+        </h2>
+
+
+        <p class="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/60">
+            Destination guides, hidden gems and handpicked stays —
+            delivered occasionally, never annoyingly.
+        </p>
+
+
+        <form
+            id="newsletterForm"
+            class="mx-auto mt-8 flex max-w-lg flex-col gap-2 sm:flex-row"
+        >
+
+            <input
+                id="emailInput"
+                required
+                type="email"
+                placeholder="Your email address"
+                class="h-13 flex-1 rounded-full bg-white/10 px-5 text-sm text-white outline-none placeholder:text-white/40 focus:ring-2 focus:ring-[#cdb993]"
+            >
+
+
+            <button
+                class="rounded-full bg-[#d2bd98] px-7 py-3.5 text-sm font-bold text-[#1c3325] transition hover:bg-white"
+            >
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer
+    class="border-t border-slate-200 px-5 py-10 dark:border-white/10 lg:px-8"
+>
+
+    <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+
+        <div>
+
+            <div class="font-['Playfair_Display'] text-2xl">
+                VAYO
+            </div>
+
+            <p class="mt-1 text-xs text-slate-400">
+                Stay somewhere extraordinary.
+            </p>
+
+        </div>
+
+
+        <div class="flex gap-6 text-xs text-slate-500">
+
+            <a href="#" class="hover:text-slate-900 dark:hover:text-white">
+                Privacy
+            </a>
+
+            <a href="#" class="hover:text-slate-900 dark:hover:text-white">
+                Terms
+            </a>
+
+            <a href="#" class="hover:text-slate-900 dark:hover:text-white">
+                Contact
+            </a>
+
+        </div>
+
+
+        <p class="text-xs text-slate-400">
+            © 2026 VAYO
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     PROPERTY MODAL
+===================================================== -->
+
+<div
+    id="propertyModal"
+    class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+>
+
+    <div
+        id="propertyModalBox"
+        class="max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[2rem] bg-white shadow-2xl dark:bg-[#171c18]"
+    >
+
+        <div class="grid lg:grid-cols-2">
+
+            <div class="relative min-h-[320px]">
+
+                <img
+                    id="modalImage"
+                    src=""
+                    class="absolute inset-0 h-full w-full object-cover"
+                    alt=""
+                >
+
+                <button
+                    id="closePropertyModal"
+                    class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-xl shadow-lg"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="p-7 sm:p-9">
+
+                <p
+                    id="modalLocation"
+                    class="text-xs font-bold uppercase tracking-widest text-[#9b8060]"
+                >
+                </p>
+
+
+                <h2
+                    id="modalTitle"
+                    class="mt-3 font-['Playfair_Display'] text-4xl"
+                >
+                </h2>
+
+
+                <div class="mt-4 flex items-center gap-3">
+
+                    <span
+                        id="modalRating"
+                        class="rounded-full bg-[#eeeae2] px-3 py-1 text-xs font-bold dark:bg-white/5"
+                    >
+                    </span>
+
+                    <span class="text-xs text-slate-400">
+                        124 reviews
+                    </span>
+
+                </div>
+
+
+                <p class="mt-7 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                    A carefully selected stay designed around comfort,
+                    privacy and unforgettable surroundings.
+                </p>
+
+
+                <div class="mt-7 grid grid-cols-3 gap-3">
+
+                    <div class="rounded-2xl bg-[#f5f3ee] p-4 text-center dark:bg-white/5">
+                        <strong class="block">
+                            2
+                        </strong>
+
+                        <span class="text-xs text-slate-400">
+                            Guests
+                        </span>
+                    </div>
+
+
+                    <div class="rounded-2xl bg-[#f5f3ee] p-4 text-center dark:bg-white/5">
+                        <strong class="block">
+                            3
+                        </strong>
+
+                        <span class="text-xs text-slate-400">
+                            Bedrooms
+                        </span>
+                    </div>
+
+
+                    <div class="rounded-2xl bg-[#f5f3ee] p-4 text-center dark:bg-white/5">
+                        <strong class="block">
+                            Pool
+                        </strong>
+
+                        <span class="text-xs text-slate-400">
+                            Amenity
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- Booking dates -->
+
+                <div class="mt-7 grid grid-cols-2 gap-3">
+
+                    <div>
+
+                        <label class="mb-2 block text-xs font-bold">
+                            Check in
+                        </label>
+
+                        <input
+                            id="modalCheckIn"
+                            type="date"
+                            class="h-12 w-full rounded-xl border border-slate-200 bg-transparent px-3 text-sm outline-none dark:border-white/10"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label class="mb-2 block text-xs font-bold">
+                            Check out
+                        </label>
+
+                        <input
+                            id="modalCheckOut"
+                            type="date"
+                            class="h-12 w-full rounded-xl border border-slate-200 bg-transparent px-3 text-sm outline-none dark:border-white/10"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Price -->
+
+                <div class="mt-7 rounded-2xl bg-[#f5f3ee] p-5 dark:bg-white/5">
+
+                    <div class="flex justify-between text-sm">
+
+                        <span>
+                            <span id="modalPrice">
+                                $0
+                            </span>
+                            ×
+                            <span id="nightCount">
+                                1
+                            </span>
+                            nights
+                        </span>
+
+                        <strong id="roomTotal">
+                            $0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="mt-3 flex justify-between text-sm">
+
+                        <span>
+                            Service fee
+                        </span>
+
+                        <span id="serviceFee">
+                            $0
+                        </span>
+
+                    </div>
+
+
+                    <div class="my-4 border-t border-slate-200 dark:border-white/10"></div>
+
+
+                    <div class="flex justify-between">
+
+                        <strong>
+                            Total
+                        </strong>
+
+                        <strong
+                            id="grandTotal"
+                            class="text-xl"
+                        >
+                            $0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="reserveBtn"
+                    class="mt-5 w-full rounded-2xl bg-[#1c3325] py-4 text-sm font-bold text-white transition hover:bg-[#284832]"
+                >
+                    Reserve this stay
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    id="toast"
+    class="pointer-events-none fixed bottom-6 left-1/2 z-[200] -translate-x-1/2 translate-y-20 rounded-full bg-[#1c3325] px-6 py-3 text-sm font-bold text-white opacity-0 shadow-2xl transition-all duration-300"
+>
+    Done
+</div>
+
+
+</body>
+</html>
